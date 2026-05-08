@@ -20,3 +20,6 @@ statsmodels
 # Plotting
 matplotlib
 seaborn
+
+# Notebook environment
+jupyter

@@ -23,8 +23,7 @@ Evaluated on observed 2026 market data. Full methodology and results are in the 
 | [`DataPull.ipynb`](DataPull.ipynb) | Pulls daily OHLCV for 14 energy tickers from Yahoo Finance (Jan 2020 – Apr 2026) |
 | [`SentimentAnalysis.ipynb`](SentimentAnalysis.ipynb) | Collects text from NewsAPI / Reddit (PRAW) / GDELT, scores with FinBERT, produces daily sentiment features |
 | [`LSTM_Regime_Model.ipynb`](LSTM_Regime_Model.ipynb) | Trains the 2-layer LSTM regime classifier; outputs regime probability vectors per (ticker, date) |
-| [`Trading Strategies for MAB_Oil&Gas.ipynb`](Trading%20Strategies%20for%20MAB_Oil%26Gas.ipynb) | Implements the 7 trading strategies that serve as bandit arms |
-| [`MAB_Final_RealValues.ipynb`](MAB_Final_RealValues.ipynb) | Final MAB evaluation on observed 2026 test data |
+| [`MAB_Final_RealValues.ipynb`](MAB_Final_RealValues.ipynb) | Final MAB evaluation on observed 2026 test data — defines the 7 trading strategies, the EXP3 bandit, and runs the full evaluation end-to-end |
 | [`242B Final Project.ipynb`](242B%20Final%20Project.ipynb) | End-to-end data cleaning notebook |
 
 **Cached intermediate outputs** (committed so the pipeline can be reproduced without re-running expensive API calls):
@@ -48,14 +47,15 @@ jupyter notebook
 
 Then open any notebook and **Run All**. Every notebook reads and writes CSVs in the current directory — no Google Drive setup or manual file uploads required.
 
-**Run order:**
-1. `DataPull.ipynb` — produces price data
-2. `SentimentAnalysis.ipynb` — produces sentiment features
-3. `LSTM_Regime_Model.ipynb` — trains the regime classifier
-4. `Trading Strategies for MAB_Oil&Gas.ipynb` — defines the strategy arms
-5. `MAB_Final_RealValues.ipynb` — final bandit evaluation on 2026 test data
+**To reproduce the final results:** open `MAB_Final_RealValues.ipynb` and Run All. It is self-contained — it reads the cached `Test_Dataset_No_Sentiment.csv` and `test_regime_probabilities.csv` (both committed to this repo) and produces the final bandit evaluation.
 
-Steps 1, 2, and 3 can be skipped entirely by using the cached CSVs already in the repo — go straight to step 4 and 5 to reproduce the final results.
+**To inspect how the inputs were generated**, the dev pipeline runs in this order:
+1. `DataPull.ipynb` — pulls daily prices from Yahoo Finance
+2. `SentimentAnalysis.ipynb` — produces sentiment features from NewsAPI / Reddit / GDELT
+3. `242B Final Project.ipynb` — cleans and splits the dataset into train / val / test
+4. `LSTM_Regime_Model.ipynb` — trains the regime classifier and exports regime probabilities
+
+All intermediate outputs from these steps are already cached in the repo, so re-running them is optional.
 
 ## API Credentials
 

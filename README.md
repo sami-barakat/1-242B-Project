@@ -39,10 +39,14 @@ Evaluated on observed 2026 market data. Full methodology and results are in the 
 
 ## How to Run
 
-The notebooks were developed in **Google Colab** with files mounted from Google Drive at `/content/drive/My Drive/242B Project_LSTM+Sentiment+MAB/`. To reproduce, either:
+```bash
+git clone https://github.com/sami-barakat/1-242B-Project.git
+cd 1-242B-Project
+pip install -r requirements.txt
+jupyter notebook
+```
 
-- **Recommended (Colab):** upload all CSVs in this repo to that Drive folder and run the notebooks in the order below, or
-- **Local:** install dependencies (`pip install -r requirements.txt`) and edit the Drive paths in each notebook to point at this directory.
+Then open any notebook and **Run All**. Every notebook reads and writes CSVs in the current directory — no Google Drive setup or manual file uploads required.
 
 **Run order:**
 1. `DataPull.ipynb` — produces price data
@@ -51,7 +55,7 @@ The notebooks were developed in **Google Colab** with files mounted from Google 
 4. `Trading Strategies for MAB_Oil&Gas.ipynb` — defines the strategy arms
 5. `MAB_Final_RealValues.ipynb` — final bandit evaluation on 2026 test data
 
-Steps 1, 2, and 3 can be skipped entirely by using the cached CSVs already in the repo.
+Steps 1, 2, and 3 can be skipped entirely by using the cached CSVs already in the repo — go straight to step 4 and 5 to reproduce the final results.
 
 ## API Credentials
 

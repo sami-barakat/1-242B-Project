@@ -1,0 +1,22 @@
+# Data
+yfinance
+pandas
+numpy
+scikit-learn
+
+# Deep learning + sentiment
+torch
+transformers
+
+# Data sources
+requests
+praw
+gdeltdoc
+tqdm
+
+# Modeling + stats
+statsmodels
+
+# Plotting
+matplotlib
+seaborn

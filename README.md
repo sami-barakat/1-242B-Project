@@ -24,8 +24,7 @@ Evaluated on observed 2026 market data. Full methodology and results are in the 
 | [`SentimentAnalysis.ipynb`](SentimentAnalysis.ipynb) | Collects text from NewsAPI / Reddit (PRAW) / GDELT, scores with FinBERT, produces daily sentiment features |
 | [`LSTM_Regime_Model.ipynb`](LSTM_Regime_Model.ipynb) | Trains the 2-layer LSTM regime classifier; outputs regime probability vectors per (ticker, date) |
 | [`Trading Strategies for MAB_Oil&Gas.ipynb`](Trading%20Strategies%20for%20MAB_Oil%26Gas.ipynb) | Implements the 7 trading strategies that serve as bandit arms |
-| [`MAB_V2.ipynb`](MAB_V2.ipynb), [`MAB_V3.ipynb`](MAB_V3.ipynb) | Earlier MAB iterations on the training set |
-| [`MAB_Final_RealValues.ipynb`](MAB_Final_RealValues.ipynb) | **Final MAB evaluation on observed 2026 test data** |
+| [`MAB_Final_RealValues.ipynb`](MAB_Final_RealValues.ipynb) | Final MAB evaluation on observed 2026 test data |
 | [`242B Final Project.ipynb`](242B%20Final%20Project.ipynb) | End-to-end data cleaning notebook |
 
 **Cached intermediate outputs** (committed so the pipeline can be reproduced without re-running expensive API calls):
